@@ -1,28 +1,181 @@
-<html>
-<head>
-<style>
-	body { background-color: #eeeeee; }
-	textarea { height: 150px; border-radius: 5px; }
-	a { color: #0000FF; text-decoration: none; }
-	img { cursor: pointer; }
-	button { border-radius: 5px; }
-</style>
-<script src="wordlist_loader.js"></script>
-</head>
-<body>
-<table>
-<thead><tr><td>users</td><td>passwords</td><td>user:password</td></tr></thead>
-<tbody id="wordlists">
-</tbody>
-<tfoot>
-<tr>
-<td><textarea id="users"></textarea></td>
-<td><textarea id="passwords"></textarea></td>
-<td><textarea id="combo"></textarea></td>
-</tr>
-</tfoot>
-</table>
-<button id="add">add</button>
-<button id="ok">ok</button>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<title> Wordlist </title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+            body {
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                padding: 0px;
+                background-color: rgb(255, 255, 255);
+                font-family: "Work Sans", sans-serif;
+            }
+
+            .info {
+                padding: 10px 50px 10px 50px;
+				background-color: var(--box-color);
+				box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+            }
+
+			.body {
+				padding: 15px 50px 15px 50px;
+			}
+
+            * {
+                box-sizing: border-box;
+            }
+
+			small {
+				color: rgb(128, 128, 128);
+			}
+
+			textarea {
+				width: 100%;
+				resize: none;
+				box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+				border: 0.5px solid rgba(0, 0, 0, 0.085);
+				height: 60vh;
+				padding: 10px;
+			}
+
+			textarea:focus {
+				outline: 0.5px solid rgba(0, 0, 0, 0.195);
+			}
+
+			.fa-x {
+				font-size: 12px;
+				color: rgb(185, 38, 38);
+			}
+
+			a {
+				color: rgb(54, 156, 224);
+				vertical-align: middle;
+				text-decoration: none;
+			}
+
+			[tip] .tooltip 
+			{				
+				position: fixed;
+				font-size: 12px;
+				line-height: 20px;
+				padding: 5px;
+
+				text-align: left;
+
+				max-width: fit-content;
+
+				vertical-align: middle;
+				align-content: center;
+				text-align: center;
+
+				background: black;
+				color: white;
+
+				visibility: hidden;
+				box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+
+				z-index: 5;
+
+				opacity: 0;
+				transition: opacity 0.5s, visiblity 0s;
+				transition: 0.2s;
+			}
+
+			[tip]:hover .tooltip 
+			{
+				z-index: 5;
+				visibility: visible;
+				opacity: 1;
+			}
+
+			::-webkit-scrollbar {
+				width: 3px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				background-color: rgba(0, 0, 0, 0.300);
+			}
+
+			td {
+				width: 50em;
+			}
+
+			#wordlists {
+				padding: 10px 5px 50px 5px;
+			}
+
+			#wordlists [action="del_wordlist"] {
+				padding-right: 40px;
+			}
+
+			button {
+				width: 12rem;
+				background-color: rgb(255, 255, 255);
+				box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+				border: 0.5px solid rgba(0, 0, 0, 0.085);
+				padding: 10px;
+			}
+
+			button:hover {
+				background-color: rgb(242, 242, 242);
+				cursor: pointer;
+			}
+
+			button:active {
+				background-color: rgb(255, 255, 255);
+			}
+        </style>
+        <script src="wordlist.js"></script>
+    </head>
+    <body>
+		<div class="info">
+			<h1>Wordlist <small><script>document.write(window.location.pathname)</script></small></h1>
+			<p>
+				Create a list of words for <b>Bruteforce</b> to use for automation in the bruteforce logic.
+				&ensp; * <small>if any are left empty it will not work.</small>
+			</p>
+		</div>
+		<div class="body">
+			<center>
+			<div id="wordlists"></div>
+			<!---->
+			<table>
+				<thead>
+					<tr>
+						<td>Usernames</td>
+						<td>Passwords</td>
+						<td>Username and Password</td>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td>
+							<textarea placeholder="Add usernames&#13;EX: johndoe" id="users"></textarea>
+						</td>
+						<td>
+							<textarea placeholder="Add passwords&#13;EX: imadoe123" id="passwords"></textarea>
+						</td>
+						<td>
+							<textarea placeholder="Add both for a longer complex list&#13;EX: johndoe:imadoe123" id="combo"></textarea>
+						</td>
+					</tr>
+				</tfoot>
+			</table>	
+			<!---->
+			</center>
+		</div>
+		<div class="buttons">
+			<center>
+			<!---->
+			<button id="add">Add</button>
+			<button id="ok">Ok</button>
+			<!---->
+			</center>
+		</div>
+    </body>
 </html>

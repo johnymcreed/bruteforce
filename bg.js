@@ -303,11 +303,9 @@ var content_handlers = {
     },
     put_founded: function(tabid, data)
     {
-        var target, audio = new Audio('sounds/complete.mp3')
+        var target
         if( ( target = window.targets.find(data.host) ) != null )
             target.founded.push( data.founded )
-        audio.loop = false
-        audio.play()
     },
     wait_target: function(tabid)
     {
