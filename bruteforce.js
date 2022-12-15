@@ -230,13 +230,6 @@ var Brute = function () {
                 }
             );
         }
-        /*function wait_for(field_object, that)
-		{
-			if(field_object && field_object.value == '')
-				get_creds(that)
-			else
-				setTimeout( wait_for, 1000, field_object, that )
-		}*/
         function get_creds(that) {
             if (that.is_running) return;
             that.is_running = true;
@@ -258,9 +251,9 @@ var Brute = function () {
     };
 
     this.attack = function () {
-        highlight_field_element(user_field_element, "#F00");
-        highlight_field_element(password_field_element, "#F00");
-        highlight_field_element(submit_field_element, "#F00");
+        highlight_field_element(user_field_element, "rgba(255, 255, 255, 0.5)");
+        highlight_field_element(password_field_element, "rgba(255, 255, 255, 0.5)");
+        highlight_field_element(submit_field_element, "rgba(255, 255, 255, 0.5)");
         if (password_field_element && submit_field_element)
             this.login(
                 user_field_element,
