@@ -1,1 +1,0 @@
-fix the right side listing the domain ect not showing
