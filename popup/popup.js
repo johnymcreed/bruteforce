@@ -48,7 +48,7 @@ var Row = function(domain)
         <div></div>
         <div></div>
         <div></div>
-		<div></div>
+        <div id="status"></div>
     `
 
     this.set_sec = function()
@@ -85,6 +85,7 @@ var Row = function(domain)
         else
             this.element.children[4].innerHTML = 'N/A'
     }
+    
     this.set_actions = function()
     {
         if( this.actions.inputs )
@@ -168,12 +169,12 @@ var Row = function(domain)
         this.set_actions()
 
         if(this.is_done)
-            this.element.children.forEach( function(td) { document.getElementById('status').innerHTML('Sucessfully Done') } )
+            this.element.children.forEach( function(td) { document.getElementById('status').innerHTML = 'Done' } )
         else
-            this.element.children.forEach( function(td) { document.getElementById('status').innerHTML('') } )
+            this.element.children.forEach( function(td) { document.getElementById('status').innerHTML = 'Waiting' } )
 
         if(this.is_founded)
-            this.element.children.forEach( function(td) { document.getElementById('status').append('Sucessfully Found') } )
+            this.element.children.forEach( function(td) { document.getElementById('status').innerHTML = 'Found' } )
 
         this.update_handlers()
     }
@@ -198,7 +199,7 @@ var Rows = function(parent_element)
             <div>Wordlist</div>
             <div>Start/Pause</div>
             <div>Add/Remove</div>
-			<div id="status">Status</div>
+			<div>Status</div>
         </div>
     `;
     
@@ -353,5 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     catch(e)
     {
+        console.warn('Errors here are usually not important, please ignore.')
+        console.error(e);
     }
 }, false);

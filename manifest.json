@@ -16,7 +16,7 @@
     ],
 
     "background" : {
-        "page": "popup/popup.html"
+        "page": "settings/background.html"
     },
 
     "content_scripts": [ {

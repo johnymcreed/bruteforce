@@ -133,6 +133,8 @@ window.onload = function () {
         window.close();
     });
 
+    document.querySelector('#pathname').append(window.location.pathname)
+
     document.getElementById("add").addEventListener("click", function () {
         var users = document.getElementById("users").value.split("\n"),
             passwords = document.getElementById("passwords").value.split("\n"),

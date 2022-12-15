@@ -1,5 +1,6 @@
 VERSION = '1.24'
 
+
 function bruteforce_exception(mess)
 {
 	console.info(mess)
@@ -102,9 +103,12 @@ var Brute = function()
 		var _user_field_element = get_field_element(this.user_field),
 			_password_field_element = get_field_element(this.password_field),
 			_submit_field_element = get_field_element(this.submit_field)
+
+		// TODO: add a hover color when hovering elements
 		highlight_field_element( _user_field_element, '#F00' )
 		highlight_field_element( _password_field_element, '#F00' )
 		highlight_field_element( _submit_field_element, '#F00' )
+
 		setTimeout( function() {
 			highlight_field_element( _user_field_element, '' )
 			highlight_field_element( _password_field_element, '' )
@@ -121,7 +125,7 @@ var Brute = function()
 		this.user_field = false
 		this.password_field = false
 		this.submit_field = false
-		window.alert("Follow these sequences:\n" + "1 - user input\n" + "2 - password input\n" + "3 - submit button")
+		window.alert("click on next sequence:\n" + "1) user input\n" + "2) password input\n" + "3) submit button")
 		var on_click_handler = ( function(that) { return function(e) {
 				//console.log('click')
 				if(! that.user_field)
@@ -331,4 +335,4 @@ page_is_load()
 bruteforce = new Brute()
 bruteforce.attempt()
 
-console.info('www_brute ' + VERSION)
+console.info(window.location.pathname, VERSION)
