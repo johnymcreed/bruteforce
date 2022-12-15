@@ -5,10 +5,10 @@
     "version": "1.0.3",
  
     "icons": {
-        "16": "settings/icon.png",
-        "32": "settings/icon.png",
-        "48": "settings/icon.png",
-        "128": "settings/icon.png"
+        "16": "settings/logo.png",
+        "32": "settings/logo.png",
+        "48": "settings/logo.png",
+        "128": "settings/logo-128.png"
     },
 
     "permissions": [
@@ -26,7 +26,7 @@
 
     "browser_action": {
         "default_title": "Bruteforce",
-        "default_icon": "settings/icon.png",
+        "default_icon": "settings/logo.png",
         "default_popup": "popup/popup.html"
     }
 }
