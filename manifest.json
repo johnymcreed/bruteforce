@@ -1,14 +1,14 @@
 {
     "manifest_version": 2,
-    "name": "www_brute",
-    "description": "WWW bruteforce login forms",
+    "name": "Bruteforce",
+    "description": "Forked from www_brute as a mission to make this much better than the original was ever made to be, and redesign it to match the general publics opinon.",
     "version": "1.0.3",
  
     "icons": {
-        "16": "img/icon.png",
-        "32": "img/icon.png",
-        "48": "img/icon.png",
-        "128": "img/icon.png"
+        "16": "settings/icon.png",
+        "32": "settings/icon.png",
+        "48": "settings/icon.png",
+        "128": "settings/icon.png"
     },
 
     "permissions": [
@@ -16,17 +16,17 @@
     ],
 
     "background" : {
-        "page": "bg.html"
+        "page": "popup/popup.html"
     },
 
     "content_scripts": [ {
         "matches": ["*://*/*"],
-        "js": ["www_brute.js"]
+        "js": ["bruteforce.js"]
     } ],
 
     "browser_action": {
-        "default_title": "www_brute",
-        "default_icon": "img/icon.png",
-        "default_popup": "popup.html"
+        "default_title": "Bruteforce",
+        "default_icon": "settings/icon.png",
+        "default_popup": "popup/popup.html"
     }
 }

@@ -1,3 +1,1 @@
-remove img/ and replace with font awesome icons
-redo folder arrangments
-fix tooltip
+fix the right side listing the domain ect not showing

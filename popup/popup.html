@@ -1,0 +1,94 @@
+<!-- @format -->
+
+<html>
+	<head>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/>
+		<script src="popup.js"></script>
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+
+            body {
+                display: flex;
+                flex-direction: column;
+                margin: auto;
+                padding: 0px;
+                background-color: rgb(255, 255, 255);
+                font-family: "Work Sans", sans-serif;
+				border: none;
+				width: 50em;
+            }
+
+            .info {
+                padding: 10px 50px 10px 50px;
+				background-color: var(--box-color);
+				box-shadow: 0px 3px 21px -14px rgba(0,0,0,1);
+            }
+
+			.body {
+				padding: 15px 50px 15px 50px;
+				width: 100%;
+			}
+
+			.side {
+				float: right;
+				text-align: right;
+			}
+
+			.other-side {
+				width: 100%;
+				display: inline-block;
+			}
+
+            * {
+                box-sizing: border-box;
+            }
+
+			small {
+				color: rgb(128, 128, 128);
+			}
+
+			#stat {
+				padding: 0px 50px 0px 50px;
+			}
+
+			.content {
+				width: 100%;
+				display:inline;
+			}
+
+			input {
+				border: none;
+				outline: none;
+
+				text-align: right;
+			}
+
+			.content-area div, .content-header div {
+				padding: 15px 0px 15px 0px;
+			}
+
+			.content-header {
+				text-align: left;
+				float: left;
+			}
+
+			.content-area {
+				text-align: right;
+				float: right;
+			}
+        </style>
+	</head>
+	<body>
+		<div class="info">
+			<h1>Bruteforce <small id="pathname"></small></h1>
+			<p>
+				Open to a website, select the inputs and the login button and watch as you break through security, what more fun could you ask for?
+			</p>
+		</div>
+		<center>
+		<!---->
+		<div id="stat"></div>
+		<!---->
+		</center>
+	</body>
+</html>
